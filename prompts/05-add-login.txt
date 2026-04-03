@@ -1,0 +1,9 @@
+I have my coffee shop website and I want to add a login page to it.
+
+The idea is: when someone visits the site, they should see a nice login screen first. They enter a username and password, and if it's correct, they get taken to the rest of the website. If the login is wrong, they should see an error message.
+
+For now I just need it to work for my staff. The username can be "staff" and the password can be "morningbrew2026" — we'll change it later.
+
+I've attached my current website files. Can you add the login page and make sure everything is connected properly?
+
+I want it to look like it belongs with the rest of the site — same style, same colors.

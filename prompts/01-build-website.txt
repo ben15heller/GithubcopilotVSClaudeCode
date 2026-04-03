@@ -1,0 +1,15 @@
+I want to create a website for my coffee shop called "Morning Brew."
+
+It should have a beautiful homepage, a menu section showing our drinks and prices, and a contact section with our address and hours.
+
+Make it look modern and professional — I want customers to be really impressed when they visit it.
+
+Our address is 123 Maple Street, Brooklyn, NY 11201. We're open Monday through Friday 7am to 7pm, and weekends 8am to 5pm.
+
+Our drinks and prices are:
+- Espresso — $3.50
+- Latte — $5.00
+- Cold Brew — $5.50
+- Cappuccino — $4.75
+
+Can you build this for me?

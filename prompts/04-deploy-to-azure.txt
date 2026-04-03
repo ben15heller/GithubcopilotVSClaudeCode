@@ -1,0 +1,14 @@
+I have a simple web app that my team uses to track tasks — it's a task board where we can add tasks, mark them in progress, and check them off when done.
+
+I need to put it on the internet so my whole team can access it from anywhere — right now it only runs on my laptop.
+
+I use Microsoft Azure for my company's cloud. Here are my details:
+- Azure Subscription ID: [REPLACE_WITH_YOUR_SUBSCRIPTION_ID]
+- Resource Group: copilot-benchmark-rg
+- Preferred Region: East US
+
+Please use the Free tier (F1) for Azure App Service — I don't want to incur costs for this test.
+
+I've attached all the app files. Can you deploy this to Azure so my team can use it at a real web address?
+
+Please walk me through exactly what to do and take care of as much of the setup as you can.

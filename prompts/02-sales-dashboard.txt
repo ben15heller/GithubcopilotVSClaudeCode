@@ -1,0 +1,12 @@
+I have my company's sales data in a file called sales_data.csv.
+
+Can you turn this into a visual dashboard I can show my team in our next meeting?
+
+I want to be able to see:
+- Which regions are making the most money
+- Which of our products sell the best
+- Whether our sales are going up or down month over month
+
+Make it look really polished and professional — I want to impress my boss when I present this.
+
+The file is attached. Please create something I can open in my browser right now.

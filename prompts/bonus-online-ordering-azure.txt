@@ -1,0 +1,24 @@
+My coffee shop is called Morning Brew and business is booming. I want to take orders online so customers don't have to wait in line.
+
+Here's what I need you to build and put live on the internet:
+
+CUSTOMER SIDE:
+- A nice-looking page where customers can see our menu (Espresso $3.50, Latte $5.00, Cold Brew $5.50, Cappuccino $4.75)
+- They can add drinks to a cart and place an order with their name
+- After ordering they should see a confirmation that their order was received
+- It should look like a real coffee shop ordering page — modern, clean, on-brand
+
+OWNER SIDE:
+- A separate dashboard page where I can see all incoming orders
+- Each order should show the customer name, what they ordered, and when they ordered
+- I should be able to mark an order as "Ready" when it's done
+
+Please build the whole thing and deploy it to Azure so it's live at a real web address.
+
+My Azure details:
+- Subscription ID: [REPLACE_WITH_YOUR_SUBSCRIPTION_ID]
+- Resource Group: copilot-benchmark-rg
+- Region: East US
+- Please use the Free tier (F1) for App Service — I don't want extra costs
+
+Everything should be built from scratch. Make it look great — I want to show this to investors.

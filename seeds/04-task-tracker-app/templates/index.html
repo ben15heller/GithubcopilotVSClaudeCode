@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morning Brew — Team Tasks</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
+
+    header {
+      background: #3b2a1a;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header h1 { font-size: 1.5rem; }
+    header p { font-size: 0.9rem; opacity: 0.75; }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+
+    .add-task-form {
+      background: white;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .add-task-form h2 { margin-bottom: 16px; font-size: 1.1rem; color: #5c3d1e; }
+
+    .form-row { display: flex; gap: 12px; }
+    .form-row input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    .form-row button {
+      background: #c0813a;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .form-row button:hover { background: #a0671f; }
+
+    .task-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .column {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .column h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+    }
+
+    .column.todo h3 { color: #888; border-color: #ddd; }
+    .column.inprog h3 { color: #c0813a; border-color: #f0c080; }
+    .column.done h3 { color: #4caf72; border-color: #b2dfcc; }
+
+    .task-card {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .task-card .task-title { font-size: 0.95rem; font-weight: bold; margin-bottom: 4px; }
+    .task-card .task-meta { font-size: 0.8rem; color: #999; margin-bottom: 10px; }
+
+    .task-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .task-actions form button {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-progress { background: #fff3e0; color: #c0813a; }
+    .btn-done { background: #e8f5e9; color: #388e3c; }
+    .btn-delete { background: #fce4e4; color: #c62828; }
+
+    .empty { color: #bbb; font-size: 0.85rem; text-align: center; padding: 20px 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Morning Brew — Team Tasks</h1>
+    <p>Track what needs to get done across your team</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="add-task-form">
+    <h2>Add a New Task</h2>
+    <form action="/add" method="POST">
+      <div class="form-row">
+        <input type="text" name="title" placeholder="What needs to get done?" required />
+        <input type="text" name="assignee" placeholder="Who's responsible?" />
+        <button type="submit">+ Add Task</button>
+      </div>
+    </form>
+  </div>
+
+  {% set todo_tasks = tasks | selectattr("status", "equalto", "To Do") | list %}
+  {% set inprog_tasks = tasks | selectattr("status", "equalto", "In Progress") | list %}
+  {% set done_tasks = tasks | selectattr("status", "equalto", "Done") | list %}
+
+  <div class="task-board">
+
+    <div class="column todo">
+      <h3>To Do ({{ todo_tasks | length }})</h3>
+      {% for task in todo_tasks %}
+        <div class="task-card">
+          <div class="task-title">{{ task.title }}</div>
+          <div class="task-meta">{{ task.assignee }} &middot; {{ task.created }}</div>
+          <div class="task-actions">
+            <form action="/update/{{ task.id }}" method="POST" style="display:inline">
+              <input type="hidden" name="status" value="In Progress" />
+              <button type="submit" class="btn-progress">Start</button>
+            </form>
+            <form action="/delete/{{ task.id }}" method="POST" style="display:inline">
+              <button type="submit" class="btn-delete">Remove</button>
+            </form>
+          </div>
+        </div>
+      {% else %}
+        <div class="empty">Nothing here yet</div>
+      {% endfor %}
+    </div>
+
+    <div class="column inprog">
+      <h3>In Progress ({{ inprog_tasks | length }})</h3>
+      {% for task in inprog_tasks %}
+        <div class="task-card">
+          <div class="task-title">{{ task.title }}</div>
+          <div class="task-meta">{{ task.assignee }} &middot; {{ task.created }}</div>
+          <div class="task-actions">
+            <form action="/update/{{ task.id }}" method="POST" style="display:inline">
+              <input type="hidden" name="status" value="Done" />
+              <button type="submit" class="btn-done">Mark Done</button>
+            </form>
+            <form action="/delete/{{ task.id }}" method="POST" style="display:inline">
+              <button type="submit" class="btn-delete">Remove</button>
+            </form>
+          </div>
+        </div>
+      {% else %}
+        <div class="empty">Nothing in progress</div>
+      {% endfor %}
+    </div>
+
+    <div class="column done">
+      <h3>Done ({{ done_tasks | length }})</h3>
+      {% for task in done_tasks %}
+        <div class="task-card">
+          <div class="task-title">{{ task.title }}</div>
+          <div class="task-meta">{{ task.assignee }} &middot; {{ task.created }}</div>
+          <div class="task-actions">
+            <form action="/delete/{{ task.id }}" method="POST" style="display:inline">
+              <button type="submit" class="btn-delete">Remove</button>
+            </form>
+          </div>
+        </div>
+      {% else %}
+        <div class="empty">No completed tasks yet</div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

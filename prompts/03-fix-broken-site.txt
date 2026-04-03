@@ -1,0 +1,10 @@
+My coffee shop website isn't working properly and I have no idea what's wrong.
+
+A few things seem broken:
+- The styling looks completely off — nothing looks the way it should
+- There's a button that's supposed to show our full menu but nothing happens when I click it
+- One of the images isn't loading — it just shows a broken image icon
+
+I've attached all the website files. Can you figure out what's broken and fix everything so it works properly?
+
+I haven't changed anything — it was working before and now it's not. Please fix it and make sure it all looks right.
