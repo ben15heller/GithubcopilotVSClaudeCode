@@ -229,21 +229,6 @@ The selected model is displayed above the input box so you can always confirm it
 
 > ⚠️ **Verify before each test:** Confirm the model name shown in each session matches the required model before pasting any prompt. A wrong model quietly invalidates the comparison.
 
----
-
-## Pinned Versions
-
-Record the tool versions you used so others can reproduce your results:
-
-| Tool | Version Used |
-|---|---|
-| `copilot` (GitHub Copilot CLI) | _(fill in — run `copilot --version`)_ |
-| `claude` (Claude Code CLI) | _(fill in — run `claude --version`)_ |
-| Model — main tests | Claude Sonnet 4.6 |
-| Model — bonus round | Claude Opus 4.6 |
-| Python | _(fill in)_ |
-| Date of test | _(fill in)_ |
-
 > ⚠️ **Minimum version requirement:** GitHub Copilot CLI **v1.0.17 or later** is required for Claude Sonnet 4.6 and Opus 4.6 model support. Run `copilot --version` to confirm before starting. If outdated, run `npm install -g @github/copilot` to update.
 
 ---
@@ -264,13 +249,9 @@ Fork the repo, run the tests, and publish your own results.
 
 | What's Being Tested | Expected Finding |
 |---|---|
-| AI output quality | Statistically equivalent |
+| AI output quality | Equivalent |
 | Ability to build a website | Both work |
 | Ability to read and fix bugs | Both work |
 | Ability to deploy to Azure | Both work |
-| Enterprise security & identity | GitHub Copilot only |
-| Audit logs & policy controls | GitHub Copilot only |
-| IP indemnification | GitHub Copilot only |
-| Single sign-on with your org | GitHub Copilot only |
 
-> For companies already using GitHub and Microsoft 365, switching to Claude Code trades enterprise-grade protections for no measurable gain in AI output quality.
+
