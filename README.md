@@ -10,7 +10,7 @@ This benchmark is designed for **business users and decision-makers** — people
 
 The goal is to answer one honest question:
 
-> *"Should a business already using GitHub and Microsoft 365 switch to Claude Code, or does GitHub Copilot do the same job — with added protections they're already paying for?"*
+> *"Is the hype real or is there an incredible marketing cycle happening and Github Copilot functions just as good as Claude Code in the CLI?"*
 
 ---
 
