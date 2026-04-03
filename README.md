@@ -139,11 +139,8 @@ copilot-vs-claudecode-benchmark/
 │           └── index.html
 │
 ├── scoring/
-│   ├── rubric.md                      ← Plain-English scoring guide
-│   └── judge-prompt.txt               ← Prompt for AI judge scoring
-│
-└── results/
-    └── results-template.md            ← Fill in after running tests
+    ├── rubric.md                      ← Plain-English scoring guide
+    └── judge-prompt.txt               ← Prompt for AI judge scoring
 ```
 
 ---
