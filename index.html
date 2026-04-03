@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morning Brew Coffee</title>
+  <!-- BUG #1: Wrong filename — should be style.css, not styles.css -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <!-- BUG #2: Image folder does not exist — no images/ directory provided -->
+    <img src="images/hero-photo.jpg" alt="Morning Brew Coffee Shop" class="hero-img" />
+    <div class="hero-text">
+      <h1>Morning Brew</h1>
+      <p>Your neighborhood coffee shop since 2018</p>
+    </div>
+  </header>
+
+  <!-- MENU SECTION -->
+  <section class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Espresso</h3>
+        <p>Rich, bold, and smooth. Our signature single shot.</p>
+        <span class="price">$3.50</span>
+      </div>
+      <div class="menu-item">
+        <h3>Latte</h3>
+        <p>Espresso with steamed milk and a touch of foam.</p>
+        <span class="price">$5.00</span>
+      </div>
+      <div class="menu-item">
+        <h3>Cold Brew</h3>
+        <p>Slow-steeped for 12 hours. Smooth and refreshing.</p>
+        <span class="price">$5.50</span>
+      </div>
+      <div class="menu-item">
+        <h3>Cappuccino</h3>
+        <p>Equal parts espresso, steamed milk, and foam.</p>
+        <span class="price">$4.75</span>
+      </div>
+    </div>
+    <!-- BUG #3: onclick calls openMenu() but the function in script.js is named showMenu() -->
+    <button class="menu-btn" onclick="openMenu()">See Full Menu</button>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact">
+    <h2>Find Us</h2>
+    <p>123 Maple Street, Brooklyn, NY 11201</p>
+    <p>Mon–Fri: 7am – 7pm &nbsp;|&nbsp; Sat–Sun: 8am – 5pm</p>
+    <p>Phone: (718) 555-0192</p>
+    <p>Email: hello@morningbrewcoffee.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Morning Brew Coffee. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
