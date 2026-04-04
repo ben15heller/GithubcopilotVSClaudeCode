@@ -1,6 +1,6 @@
-# Scoring Rubric — Plain English
+#Optional Scoring Rubric — Plain English 
 
-You do not need a technical background to score these tests. Each question has a simple yes/no or 1–5 scale answer. Use your honest judgment as the viewer.
+You do not need a technical background to score these tests.  Use your honest judgment as the viewer.
 
 ---
 
