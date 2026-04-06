@@ -1,6 +1,6 @@
 # GitHub Copilot CLI vs Claude Code CLI — Benchmark for Business Users
 
-> **Hypothesis:** Both tools produce functionally equivalent results. The meaningful difference for enterprise users is GitHub Copilot's built-in security, identity management, and organizational controls — not AI coding capability.
+> **Hypothesis:** Both tools produce functionally equivalent results, with using the same models and same prompts. 
 
 ---
 
@@ -93,7 +93,7 @@ Both tools receive the **same updated prompt** with your real Azure details.
 
 **This is the hardest test in the benchmark.** It requires building a multi-page app with connected state and deploying it to Azure — all from one prompt, with no existing infrastructure running.
 
-**Scoring (100 pts):**
+**Example Scoring (100 pts):**
 - Customer ordering page works: 30 pts
 - Order confirmation shown: 10 pts
 - Owner dashboard shows orders: 20 pts
